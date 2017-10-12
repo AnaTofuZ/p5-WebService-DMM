@@ -143,6 +143,16 @@ sub _validate_article_param {
     return $article;
 }
 
+sub _validate_mono_stock_param {
+    my $mono_stock = shift;
+    my @mono_stock_values = qw(stock reserve mono dmp);
+
+    unless (grep {$mono_stock eq $_} @mono_stock_values){
+        Carp::croak("'mono_stock' parameter should be (@mono_stock_values)");
+    }
+
+    return $mono_stock;
+}
 
 sub _validate_site_param {
     my $site = shift;
