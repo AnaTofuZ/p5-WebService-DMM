@@ -178,6 +178,16 @@ sub _validate_hits_param {
     return $hits;
 }
 
+sub _validate_author_hits_param {
+    my $hits = shift;
+
+    unless ($hits >= 1 && $hits <= 500) {
+        Carp::croak("'hits' parameter should be 1 <= n <= 500");
+    }
+
+    return $hits;
+}
+
 sub _validate_offset_param {
     my $offset = shift;
 
