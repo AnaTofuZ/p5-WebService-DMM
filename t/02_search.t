@@ -41,6 +41,11 @@ subtest 'invalid parameter' => sub {
     like $@, qr/should be 1 <= n <= 50000/, 'invalid offset parameter';
 
     eval {
+        $dmm->search( site => 'DMM.com', offset => 50001 );
+    };
+    like $@, qr/should be 1 <= n <= 50000/, 'invalid offset parameter';
+    
+    eval {
         $dmm->search( site => 'DMM.com', version => '0' );
     };
     like $@, qr/Invalid version '0'/, 'invalid version number';
