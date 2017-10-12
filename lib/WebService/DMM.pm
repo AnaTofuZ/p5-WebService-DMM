@@ -160,8 +160,8 @@ sub _validate_hits_param {
 sub _validate_offset_param {
     my $offset = shift;
 
-    unless ($offset >= 1) {
-        Carp::croak("'offset' parameter should be positive number(n >= 1)");
+    unless ($offset >= 1 && $offset <= 50000) {
+        Carp::croak("'offset' parameter should be 1 <= n <= 50000");
     }
 
     return $offset;
