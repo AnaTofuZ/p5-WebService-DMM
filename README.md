@@ -8,7 +8,7 @@ WebService::DMM - DMM webservice module
     use WebService::DMM;
     use Config::Pit;
 
-    my $config = pit_get('dmm.co.jp', require => {
+    my $config = pit_get('DMM.R18', require => {
         affiliate_id => 'DMM affiliate ID',
         api_id       => 'DMM API ID',
     });
@@ -61,7 +61,7 @@ _%params_ mandatory parameters are:
 
 - site :Str
 
-    Site, 'DMM.co.jp' or 'DMM.com'.
+    Site, 'DMM.R18' or 'DMM.com'.
 
 _%param_ optional parameters are:
 
@@ -130,7 +130,7 @@ DMM.com services are:
 
     fashion\_ladies, fashion\_mems, rental\_iroiro
 
-DMM.co.jp services are:
+DMM.R18 services are:
 
 - digital
 

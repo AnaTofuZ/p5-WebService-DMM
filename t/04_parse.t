@@ -23,7 +23,7 @@ subtest 'actual parse response', => sub {
     );
 
     my $res = $dmm->search(
-        site    => 'DMM.co.jp',
+        site    => 'DMM.R18',
         service => 'digital',
         keyword => 'test_key',
     );
@@ -39,12 +39,12 @@ subtest 'actual parse response', => sub {
     is $item->title, 'test_title', 'title';
     is $item->url, 'http://example.com/', 'URL';
     is $item->affiliate_url, 'http://example.com/test-999', 'affiliate url';
-    is $item->image('list'), 'http://pics.dmm.co.jp/testpt.jpg', 'image(list)';
-    is $item->image('small'), 'http://pics.dmm.co.jp/testps.jpg', 'image(small)';
-    is $item->image('large'), 'http://pics.dmm.co.jp/testpl.jpg', 'image(large)';
+    is $item->image('list'), 'http://pics.dmm.r18/testpt.jpg', 'image(list)';
+    is $item->image('small'), 'http://pics.dmm.r18/testps.jpg', 'image(small)';
+    is $item->image('large'), 'http://pics.dmm.r18/testpl.jpg', 'image(large)';
     is_deeply $item->sample_images, [
-        'http://pics.dmm.co.jp/sample1.jpg',
-        'http://pics.dmm.co.jp/sample2.jpg',
+        'http://pics.dmm.r18/sample1.jpg',
+        'http://pics.dmm.r18/sample2.jpg',
     ], 'sample image urls';
     is $item->price, '500-', 'from price';
     is $item->list_price, '1000', 'list price';
@@ -91,7 +91,7 @@ __DATA__
       <parameter name="operation" value="ItemList" />
       <parameter name="version" value="1.00" />
       <parameter name="timestamp" value="2012-01-13 14:08:16" />
-      <parameter name="site" value="DMM.co.jp" />
+      <parameter name="site" value="DMM.R18" />
       <parameter name="service" value="digital" />
       <parameter name="keyword" value="test_key" />
     </parameters>
@@ -111,14 +111,14 @@ __DATA__
         <URL>http://example.com/</URL>
         <affiliateURL>http://example.com/test-999</affiliateURL>
         <imageURL>
-          <list>http://pics.dmm.co.jp/testpt.jpg</list>
-          <small>http://pics.dmm.co.jp/testps.jpg</small>
-          <large>http://pics.dmm.co.jp/testpl.jpg</large>
+          <list>http://pics.dmm.r18/testpt.jpg</list>
+          <small>http://pics.dmm.r18/testps.jpg</small>
+          <large>http://pics.dmm.r18/testpl.jpg</large>
         </imageURL>
         <sampleImageURL>
           <sample_s>
-            <image>http://pics.dmm.co.jp/sample1.jpg</image>
-            <image>http://pics.dmm.co.jp/sample2.jpg</image>
+            <image>http://pics.dmm.r18/sample1.jpg</image>
+            <image>http://pics.dmm.r18/sample2.jpg</image>
           </sample_s>
         </sampleImageURL>
         <prices>

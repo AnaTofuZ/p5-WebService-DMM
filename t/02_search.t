@@ -28,10 +28,10 @@ subtest 'invalid parameter' => sub {
     eval {
         $dmm->search( site => 'DMM.org' );
     };
-    like $@, qr/'DMM\.co\.jp' or 'DMM\.com'/, 'invalid site parameter';
+    like $@, qr/'DMM\.R18' or 'DMM\.com'/, 'invalid site parameter';
 
     eval {
-        $dmm->search( site => 'DMM.co.jp', hits => 101 );
+        $dmm->search( site => 'DMM.R18', hits => 101 );
     };
     like $@, qr/should be 1 <= n <= 100/, 'invalid hits parameter';
 
@@ -78,7 +78,7 @@ subtest 'service and floor at DMM.com' => sub {
     }
 };
 
-subtest 'service and floor at DMM.co.jp' => sub {
+subtest 'service and floor at DMM.R18' => sub {
     my $guard = mock_guard('WebService::DMM', +{
         _send_request => sub { 1 },
     });
@@ -105,10 +105,10 @@ subtest 'service and floor at DMM.co.jp' => sub {
     for my $service (keys %service_floor) {
         for my $floor ( @{$service_floor{$service}} ) {
             ok $dmm->search(
-                site    => 'DMM.co.jp',
+                site    => 'DMM.R18',
                 service => $service,
                 floor   => $floor,
-            ), "search ${service}:${floor} at DMM.co.jp";
+            ), "search ${service}:${floor} at DMM.R18";
         }
     }
 };
