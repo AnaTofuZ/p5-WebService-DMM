@@ -29,7 +29,7 @@ my $agent_name = __PACKAGE__ . "/$VERSION";
 our $UserAgent = Furl->new(agent => $agent_name);
 
 my $ROOT_NODE;
-my @supported_api_versions = ('2.00', '1.00');
+my @supported_api_versions = ('3.00');
 
 sub __ua {
     $UserAgent ||= Furl->new(agent => $agent_name);
@@ -113,7 +113,7 @@ sub _set_root_node_name {
 
 sub _validate_version_param {
     my $version = shift;
-    return '2.00' unless defined $version;
+    return '3.00' unless defined $version;
 
     unless (grep { $version eq $_ } @supported_api_versions) {
         Carp::croak("Invalid version '$version'");
