@@ -4,7 +4,7 @@
       "Syohei YOSHIDA <syohex@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.1.1, CPAN::Meta::Converter version 2.142060",
+   "generated_by" : "Minilla/v3.0.13, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -35,7 +35,7 @@
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "Module::Build::Tiny" : "0.035"
          }
       },
       "develop" : {
@@ -61,14 +61,15 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/syohex/p5-WebService-DMM/issues"
+         "web" : "https://github.com/AnaTofuZ/p5-WebService-DMM/issues"
       },
-      "homepage" : "https://github.com/syohex/p5-WebService-DMM",
+      "homepage" : "https://github.com/AnaTofuZ/p5-WebService-DMM",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/syohex/p5-WebService-DMM.git",
-         "web" : "https://github.com/syohex/p5-WebService-DMM"
+         "url" : "git://github.com/AnaTofuZ/p5-WebService-DMM.git",
+         "web" : "https://github.com/AnaTofuZ/p5-WebService-DMM"
       }
    },
-   "version" : "0.11"
+   "version" : "0.11",
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }
