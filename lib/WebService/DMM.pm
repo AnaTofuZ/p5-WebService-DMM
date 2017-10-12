@@ -78,7 +78,6 @@ sub search {
     $param{api_id}       = $self->{api_id};
     $param{operation}    = $args{operation} || 'ItemList';
     $param{version}      = _validate_version_param($args{version});
-    $param{timestamp}    = $args{timestamp} || _format_current_time();
     $param{site}         = _validate_site_param($args{site});
 
     # optional parameters
@@ -168,9 +167,6 @@ sub _validate_offset_param {
     return $offset;
 }
 
-sub _format_current_time {
-    strftime '%Y-%m-%d %T', localtime;
-}
 
 sub last_response {
     my $self = shift;
@@ -537,10 +533,6 @@ I<%params> mandatory parameters are:
 
 Version should be '1.00' or '2.00'.
 
-=item timestamp :Str = current time
-
-Time format should be 'Year-Month-Day Hour:Minute:Second'
-(strftime format is '%Y-%m-%d %T')
 
 =item site :Str
 

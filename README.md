@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/syohex/p5-WebService-DMM.png?branch=master)](https://travis-ci.org/syohex/p5-WebService-DMM)
+[![Build Status](https://travis-ci.org/AnaTofuZ/p5-WebService-DMM.svg?branch=master)](https://travis-ci.org/AnaTofuZ/p5-WebService-DMM)
 # NAME
 
 WebService::DMM - DMM webservice module
@@ -58,11 +58,6 @@ _%params_ mandatory parameters are:
 - version :Str = "2.00"
 
     Version should be '1.00' or '2.00'.
-
-- timestamp :Str = current time
-
-    Time format should be 'Year-Month-Day Hour:Minute:Second'
-    (strftime format is '%Y-%m-%d %T')
 
 - site :Str
 
