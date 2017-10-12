@@ -140,8 +140,8 @@ sub _validate_site_param {
         Carp::croak("'site' parameter is mandatory parameter");
     }
 
-    unless ($site eq 'DMM.co.jp' || $site eq 'DMM.com') {
-        Carp::croak("'site' parameter should be 'DMM.co.jp' or 'DMM.com'");
+    unless ($site eq 'DMM.R18' || $site eq 'DMM.com') {
+        Carp::croak("'site' parameter should be 'DMM.R18' or 'DMM.com'");
     }
 
     return $site;
@@ -259,7 +259,7 @@ sub _parse_items {
         ];
 
         my ($actor_path, $node_num);
-        if ($self->{_site} eq 'DMM.co.jp') {
+        if ($self->{_site} eq 'DMM.R18') {
             $actor_path = 'iteminfo/actress';
             $node_num   = 3; # actress node has another information
         } else {
@@ -425,7 +425,7 @@ my %service_floor = (
         nandemo      => [qw/fashion_ladies fashion_mems rental_iroiro/],
     },
 
-    'DMM.co.jp' => {
+    'DMM.R18' => {
         digital => [qw/videoa videoc nikkatsu anime photo/],
         monthly => [qw/shirouto nikkatsu paradisetv animech dream avstation
                        playgirl alice crystal hmp waap momotarobb moodyz
@@ -475,7 +475,7 @@ WebService::DMM - DMM webservice module
   use WebService::DMM;
   use Config::Pit;
 
-  my $config = pit_get('dmm.co.jp', require => {
+  my $config = pit_get('DMM.R18', require => {
       affiliate_id => 'DMM affiliate ID',
       api_id       => 'DMM API ID',
   });
@@ -536,7 +536,7 @@ Version should be '1.00' or '2.00'.
 
 =item site :Str
 
-Site, 'DMM.co.jp' or 'DMM.com'.
+Site, 'DMM.R18' or 'DMM.com'.
 
 =back
 
@@ -615,7 +615,7 @@ fashion_ladies, fashion_mems, rental_iroiro
 
 =back
 
-DMM.co.jp services are:
+DMM.R18 services are:
 
 =over
 
