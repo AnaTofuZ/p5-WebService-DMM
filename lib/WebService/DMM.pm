@@ -5,7 +5,6 @@ use 5.008_001;
 
 use Carp ();
 use URI;
-use POSIX qw/strftime/;
 use Furl;
 use Encode ();
 use XML::LibXML;
@@ -124,7 +123,7 @@ sub _validate_version_param {
 
 sub _validate_sort_param {
     my $sort = shift;
-    my @sort_values = qw(rank +price -price date review);
+    my @sort_values = qw(rank price -price date review);
 
     unless (grep {$sort eq $_} @sort_values) {
         Carp::croak("'sort' parameter should be (@sort_values)");
@@ -132,6 +131,18 @@ sub _validate_sort_param {
 
     return $sort;
 }
+
+sub _validate_article_param {
+    my $article = shift;
+    my @article_values = qw(actress author genre series maker);
+
+    unless (grep {$article eq $_} @article_values) {
+        Carp::croak("'article' parameter should be (@article_values)");
+    }
+
+    return $article;
+}
+
 
 sub _validate_site_param {
     my $site = shift;
